@@ -3,7 +3,7 @@
  * @param {String} key
  * @return {String||Null}
  */
-export function getCookie(key) {
+export function getCookie(key:string) {
   let allCookie = document.cookie.replace(/\s/g, "").split(";");
   let temp;
   for (let i = 0; i < allCookie.length; i++) {
@@ -21,8 +21,8 @@ export function getCookie(key) {
  */
 export function getCookies() {
   let allCookies = document.cookie.replace(/\s/g, "").split(";");
-  let cookies = {};
-  allCookies.forEach(str => {
+  let cookies:any = {};
+  allCookies.forEach((str:string) => {
     let temp = str.split("=");
     cookies[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
   });
@@ -35,7 +35,7 @@ export function getCookies() {
  * @param {String} value
  * @param {String|Number|Date} end 过期时间(可以传毫秒数)
  */
-export function setCookie(key, value, end) {
+export function setCookie(key:string, value:string, end:string|number|Date):void {
   let endStr;
   switch (end.constructor) {
     case Number:
@@ -45,14 +45,19 @@ export function setCookie(key, value, end) {
           : "; max-age=" + end;
       break;
     case String:
-      sExpires = "; expires=" + vEnd;
+      endStr = "; expires=" + end;
       break;
     case Date:
-      sExpires = "; expires=" + vEnd.toUTCString();
+      endStr = "; expires=" + (<Date>end).toUTCString();
       break;
   }
 
   document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
     value
   )}${endStr}`;
+}
+export default {
+  getCookie,
+  getCookies,
+  setCookie
 }

@@ -7,3 +7,18 @@
  -->
 
 # 前端函数库
+
+- [x] array
+- [x] cookies
+- [x] device
+- [ ] htmlClass
+- [ ] htmlDom
+- [ ] function
+- [ ] keycode
+- [ ] Object
+- [ ] Random
+- [ ] Regexp
+- [ ] String
+- [ ] Support
+- [ ] time
+- [ ] url 

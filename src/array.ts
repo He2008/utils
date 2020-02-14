@@ -1,11 +1,10 @@
-
-export default{
+export default {
   /**
- * @desc 对比两个数组是否相等
- * @param {Array} arr1 数组1
- * @param {Array} arr2 数组2
- */
-  arrayEqual(arr1, arr2) {
+   * @desc 对比两个数组是否相等
+   * @param {Array} arr1 数组1
+   * @param {Array} arr2 数组2
+   */
+  arrayEqual(arr1: any[], arr2: any[]): boolean {
     if (arr1 === arr2) return true;
     if (arr1.length !== arr2.length) return false;
     for (let i = 0; i <= arr1.length; i++) {
@@ -13,5 +12,4 @@ export default{
     }
     return true;
   }
-}  
-
+};

@@ -11,7 +11,7 @@ const userAgent = window.navigator.userAgent.toLowerCase();
  * 判断是否为360浏览器
  */
 
-function validate360(option, value) {
+function validate360(option:"type", value:string) {
   let mimeTypes = window.navigator.mimeTypes;
   for (let mt in mimeTypes) {
     console.log(mimeTypes[mt][option]);
@@ -137,7 +137,7 @@ export default {
   /*
    * 获取oper浏览器版本
    */
-  getOperaVersion(userAgent) {
+  getOperaVersion(userAgent:string) {
     try {
       if (window.opera) {
         return userAgent.match(/opera.([\d.]+)/)[1];

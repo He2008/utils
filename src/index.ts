@@ -1,11 +1,3 @@
-import array from './array'
-import cookie from './cookie'
-(<any>window).utils ;
+import { bubbleSort } from "./ALG/sort";
 
-const utils = {
-    ...array,
-    ...cookie
-}
-
-window.utils = utils;
-export default utils
+console.log(bubbleSort([2, 3, 4, 1, 9]));

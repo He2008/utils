@@ -6,7 +6,7 @@
  * @FilePath: /utils/README.md
  -->
 
-# 前端函数库
+# 函数库
 
 - [x] array
 - [x] cookies
@@ -21,4 +21,12 @@
 - [ ] String
 - [ ] Support
 - [ ] time
-- [ ] url 
+- [ ] url
+
+# 算法示例
+
+一些常用算法的基本实现和原理。
+
+- [] 冒泡排序
+- [] 插入排序
+- [] 快速排序

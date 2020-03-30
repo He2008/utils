@@ -8,7 +8,43 @@
 
 #### 优缺点：
 
-冒泡排序需要在最终排列之前不停的交换元素的位置，一般会被认为是最低效的排序方法。但是由于冒泡排序会遍历所有未被排序的部分所以可以做到一些其他排序方法做不到的事情。而且如果整个遍历过程没有进行位置交换就可以认为排序已经完成。
+冒泡排序需要在最终排列之前不停的交换元素的位置，一般会被认为是最低效的排序方法。但是由于冒泡排序会遍历所有未被排序的部分所以可以做到一些其他排序方法做不到的事情。而且如果整个遍历过程没有进行位置交换就可以认为排序已经完成。因此可以优化冒泡排序
+
+#### 示例：
+
+```ts
+// 基本实现
+function bubbleSort(arr: Array<Number>) {
+  let temp: Number = NaN;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        temp = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+}
+//  结果优化
+function bubbleSort(arr: Array<Number>) {
+  let temp: Number = NaN;
+  let isExchange: Boolean = false;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        temp = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = temp;
+        isExchange = true;
+      }
+    }
+    if (isExchange === false) return arr;
+  }
+  return arr;
+}
+```
 
 ### 插入
 

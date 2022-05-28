@@ -5,3 +5,6 @@
  * @Description:
  * @FilePath: /utils/src/session.js
  */
+function getSessionObject(){
+
+}

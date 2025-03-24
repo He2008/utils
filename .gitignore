@@ -1,2 +1,7 @@
 node_modules
 .history/
+yarn.lock
+# OS generated
+.DS_Store
+.DS_Store?
+._*

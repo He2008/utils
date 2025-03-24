@@ -3,15 +3,20 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 module.exports = {
+  mode: "development",
   entry: "./src/index.ts",
   plugins: [
-    new CleanWebpackPlugin(),
+
     new HtmlWebpackPlugin({
       title: "Output Management"
     }),
-    new webpack.NamedModulesPlugin(),
-     new webpack.HotModuleReplacementPlugin()
+     new webpack.HotModuleReplacementPlugin(),
+     new CleanWebpackPlugin(),
+
   ],
+  optimization:{
+    moduleIds:'named'
+  },
   module: {
     rules: [
       {
@@ -23,8 +28,9 @@ module.exports = {
   },
   devtool: "inline-source-map",
   devServer: {
-    contentBase: "./dist",
-    hot: true
+    static: "./dist",
+    compress:true,
+    port:9000
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
